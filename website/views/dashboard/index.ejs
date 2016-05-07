@@ -1,0 +1,63 @@
+<% include ../header %>
+<header class="w3-container w3-teal">
+    <% include ../exit %>
+    <h3>Price Crawler</h3>
+    <h6><%- user.username %>'s Dashboard</h6>
+</header>
+<section>
+    <br>
+    <h6>You'd like stalk some new product?</h6>
+    <form class="dash-index w3-container" action="/product" method="post">
+        <label class="w3-label">Name</label>
+        <input class="w3-input" type="text" name="product[name]" placeholder="enter product name" required>
+        <label class="w3-label">Store</label>
+	<select class="w3-select w3-border" name="product[store_name]">
+	    <option value="" disabled selected>choose a store</option>
+  	    <option value="Americanas">Americanas</option>
+  	    <option value="Shoptime">Shoptime</option>
+            <option value="Submarino">Submarino</option>
+            <option value="Pontofrio">Pontofrio</option>
+	</select>
+        <label class="w3-label">Link</label>
+        <input class="w3-input" type="text" name="product[link]" placeholder="enter link of product" required>
+        <label class="w3-label">Current Price</label>
+        <input class="w3-input" type="text" name="product[first_price]" placeholder="enter current product price" required>
+        <br>
+        <button class="w3-btn w3-blue-grey w3-hover-green" type="submit">ADD</button>
+    </form>
+    <br>
+    <div class="w3-border-bottom w3-border-blue-grey"></div>
+    <br>
+    <table class="w3-table w3-bordered w3-striped w3-border">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Link</th>
+                <th>Current Price</th>
+                <th>First Price</th>
+                <th>Best Price</th>
+                <th>Current Variation</th>
+                <th>Graphic</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(function(product) { %>
+                <tr>
+                    <td><%- product.name %></td>
+                    <td>
+                        <a href="<%- product.link %>"><%- product.store_name %></a>
+                    </td>
+                    <td>R$ <%- product.current_price %></td>
+                    <td>R$ <%- product.first_price %></td>
+                    <td>R$ <%- product.best_price %></td>
+                    <td><%- product.current_variation %> %</td>
+                    <td>
+                        <a href="/product/<%- product._id %>">Show</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <br>
+</section>
+<% include ../footer %>

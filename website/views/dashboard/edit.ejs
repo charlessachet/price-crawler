@@ -1,0 +1,29 @@
+<% include ../header %>
+<header class="w3-container w3-teal">
+    <% include ../exit %>
+    <h3>Price Crawler</h3>
+    <p><%- user.username %>'s dashboard</p>
+</header>
+<section>
+    <form class="center-info w3-container" action="/product/<%- product._id %>?_method=put" method="post">
+        <h4 class="w3-center w3-text-blue-grey">Edit Product</h4>
+        <label class="w3-label">Name</label>
+        <input class="w3-input" type="text" name="product[name]" placeholder="<%- product.name %>" required>
+        <label class="w3-label">Store</label>
+	<select class="w3-select w3-border" name="product[store_name]">
+	    <option value="" disabled selected>choose a store</option>
+  	    <option value="Americanas">Americanas</option>
+  	    <option value="Shoptime">Shoptime</option>
+            <option value="Submarino">Submarino</option>
+            <option value="Pontofrio">Pontofrio</option>
+	</select>
+        <label class="w3-label">Link</label>
+        <input class="w3-input" type="text" name="product[link]" placeholder="<%- product.link %>" required>
+        <br>
+        <button class="w3-btn w3-blue-grey w3-hover-yellow align-right" type="submit">Update</button>
+    </form>
+    <form class="center-info w3-container" action="/product/<%- product._id %>" method="get">
+        <button class="w3-btn w3-blue-grey w3-hover-green align-left" type="submit">Cancel</button>
+    </form>
+</section>
+<% include ../footer %>

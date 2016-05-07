@@ -1,0 +1,57 @@
+<% include ../header %>
+<header class="w3-container w3-teal">
+    <% include ../exit %>
+    <h3>Price Crawler</h3>
+    <p><%- user.username %>'s dashboard</p>
+</header>
+<section>
+    <form class="center-info w3-container" action="/product/<%- product._id %>/edit" method="get">
+        <h4 class="w3-center w3-text-blue-grey">Product Graphic</h4>
+        <div>
+            <label class="label-left w3-text-blue-grey">Name:</label>
+            <label class="label-right w3-text-blue-grey">Store:</label>
+        </div>
+        <div>
+            <label class="label-info-left"><%- product.name %></label>
+            <label class="label-info-right"><%- product.store_name %></label>
+        </div>
+        <div>
+            <label class="label-left w3-text-blue-grey">First Price:</label>
+            <label class="label-right w3-text-blue-grey">Current Price:</label>
+        </div>
+        <div>
+            <label class="label-info-left">R$ <%- product.first_price %></label>
+            <label class="label-info-right">R$ <%- product.current_price %></label>
+        </div>
+        <div>
+            <label class="label-left w3-text-blue-grey">Best Price:</label>
+            <label class="label-right w3-text-blue-grey">Current Variation:</label>
+        </div>
+        <div>
+            <label class="label-info-left">R$ <%- product.best_price %></label>
+            <label class="label-info-right"><%- product.current_variation %> %</label>
+        </div>
+        <div>
+            <label class="label-left w3-text-blue-grey">Link:</label>
+        </div>
+        <div>
+            <td>
+                <a class="label-info-last-left" href="<%- product.link %>"><%- product.link %></a>
+            </td>
+            <button class="w3-btn w3-blue-grey w3-hover-blue align-right" type="submit">Edit</button>
+        </div>
+        <div id="chartdiv", style="width:100%;height:500px;"></div>
+    </form>
+</section>
+<form class="w3-container" action="/product/<%- product._id %>?_method=delete" method="post">
+    <button class="w3-btn w3-blue-grey w3-hover-red align-right" type="submit">Exclude</button>
+</form>
+<form class="center-info w3-container" action="/dashboard" method="get">
+    <button class="w3-btn w3-blue-grey w3-hover-green align-left" type="submit">Cancel</button>
+</form>
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script> var outputPrices = <%- outputPrices %></script>
+<script src="/javascripts/price_chart.js"></script>
+<% include ../footer %>

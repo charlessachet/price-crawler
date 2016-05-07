@@ -1,0 +1,57 @@
+{
+    "_id" : ObjectId("57200b4be7138edfa695308d"),
+    "username" : "admin",
+    "password" : "admin",
+    "products" : [ 
+        {
+            "first_price" : 4499,
+            "current_price" : 3899,
+            "best_price" : 3509.1,
+            "current_variation" : -13,
+            "_id" : ObjectId("57216c597de4b6d6350a2764"),
+            "prices" : [ 
+                {
+                    "value" : 4499,
+                    "_id" : ObjectId("57216c597de4b6d6350a2765"),
+                    "date" : ISODate("2016-04-23T01:50:17.440Z")
+                }, 
+                {
+                    "value" : 4499,
+                    "date" : ISODate("2016-04-24T01:50:17.440Z")
+                }, 
+                {
+                    "value" : 3899,
+                    "date" : ISODate("2016-04-25T01:50:17.440Z")
+                }, 
+                {
+                    "value" : 3899,
+                    "date" : ISODate("2016-04-28T01:50:17.440Z")
+                }, 
+                {
+                    "value" : 3899,
+                    "date" : ISODate("2016-04-26T01:50:17.440Z")
+                }, 
+                {
+                    "value" : 3509.1,
+                    "date" : ISODate("2016-04-28T01:50:17.440Z")
+                }, 
+                {
+                    "value" : 3899,
+                    "date" : ISODate("2016-04-28T01:50:17.440Z")
+                }, 
+                {
+                    "value" : 3899,
+                    "date" : ISODate("2016-04-28T01:50:17.440Z")
+                }, 
+                {
+                    "value" : 3899,
+                    "date" : ISODate("2016-04-30T01:50:17.440Z")
+                }
+            ],
+            "link" : "http://www.americanas.com.br/produto/122702422/smart-tv-led-48-samsung-un48ju6500gxzd-ultra-hd-4k-com-conversor-digital-4-hdmi-3-usb-wi-fi-240hz-cmr?chave=HM_DT_12",
+            "name" : "Smart TV LED 48",
+            "store_name" : "Americanas"
+        }
+    ],
+    "__v" : 1
+}
