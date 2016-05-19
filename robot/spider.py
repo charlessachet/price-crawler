@@ -9,7 +9,7 @@ from product_loader import Persistence
 def _scrape_price(pattern, response_body):
     price = re.compile(pattern).search(response_body)
     if price:
-        return float(price.group(1))
+        return float(price.group(1).replace(".", "").replace(",", "."))
 
 
 def _set_best_price(product):
