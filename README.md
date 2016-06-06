@@ -1,6 +1,6 @@
 # Price Crawler #
 
-Price Crawler is a very simple website focused on tracking of prices of inputted products on the web.
+Price Crawler is a very simple website focused on track of prices of inputted products from the web.
 
 ### Supported Stores ###
 - [Americanas](http://www.americanas.com.br/)
